@@ -2,7 +2,10 @@
 This is a very simple mod that increases the camera view distance.  
   
 ### 400 > 1000 units  
+  
+## Before
 ![Screenshot_1](https://raw.githubusercontent.com/sfDesat/ViewExtension/main/Screenshots/Before.png "Before Screenshot")
+## After
 ![Screenshot_1](https://raw.githubusercontent.com/sfDesat/ViewExtension/main/Screenshots/After.png "After Screenshot")
   
 I will add a config file later.  
