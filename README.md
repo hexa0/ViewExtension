@@ -1,4 +1,4 @@
-# Information
+# ViewExtension
 This is a very simple mod that increases the camera view distance from _**400m**_ to _**1500m**_. A config option is included.
   
 ## Before
