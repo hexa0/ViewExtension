@@ -2,21 +2,32 @@ using HarmonyLib;
 using UnityEngine;
 using BepInEx;
 using GameNetcodeStuff;
+using UnityEngine.UIElements;
 
-[BepInPlugin("ViewExtension", "ViewExtension", "1.2.0")]
-public class ViewExtension : BaseUnityPlugin
+[BepInPlugin("ViewExtension", "ViewExtension", "1.2.3")]
+public class ViewExtensionLoader : BaseUnityPlugin
 {
-    private static Harmony _harmony;
+    public static float tempValue;
 
     private void Awake()
     {
-        _harmony = new Harmony("com.yourname.ViewExtension");
+         Harmony _harmony = new("com.yourname.ViewExtension");
         _harmony.PatchAll();
 
-        // Initialize configuration
         ViewExtensionConfig.Init(Config);
 
-        Logger.LogInfo($"View distance adjusted!");
+        if (float.IsNaN(ViewExtensionConfig.FarClipPlane.Value) || ViewExtensionConfig.FarClipPlane.Value <= 0 || ViewExtensionConfig.FarClipPlane.Value >= 100000)
+        {
+            Logger.LogWarning("Invalid value for FarClipPlane in the config file (" + ViewExtensionConfig.FarClipPlane.Value + "). Using default value of 1500.");
+
+            tempValue = 1500f;
+        }
+        else
+        {
+            tempValue = ViewExtensionConfig.FarClipPlane.Value;
+        }
+
+        Logger.LogInfo($"View distance adjusted to " + tempValue);
     }
 }
 
@@ -31,8 +42,7 @@ public class CameraFarClipPlanePatch
             Camera gameplayCamera = __instance.gameplayCamera;
             if ((Object)(object)gameplayCamera != (Object)null)
             {
-                // Use the configured value for FarClipPlane
-                float newFarClipPlane = ViewExtensionConfig.FarClipPlane.Value;
+                float newFarClipPlane = ViewExtensionLoader.tempValue;
                 gameplayCamera.farClipPlane = newFarClipPlane;
             }
         }
