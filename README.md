@@ -1,5 +1,5 @@
 ### ⚠️ Platform notice ⚠️
-This mod is available on a [different platform](https://www.curseforge.com/lethal-company/mods/aquatis). This platform will get priority over Thunderstore. This means that the Thunderstore version of this mod will receive less frequent updates. Thunderstore will remain supported, but wont be a priority.
+This mod is available on a [different platform](https://www.curseforge.com/lethal-company/mods/viewextension). This platform will get priority over Thunderstore. This means that the Thunderstore version of this mod will receive less frequent updates. Thunderstore will remain supported, but wont be a priority.
 
 # ViewExtension 🔍
 This is a very simple mod that increases the camera view distance from **400m** to **1500m**. A config option to change this value is included.
