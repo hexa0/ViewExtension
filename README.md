@@ -2,7 +2,7 @@
 This mod is available on a [different platform](https://www.curseforge.com/lethal-company/mods/viewextension). This platform will get priority over Thunderstore. This means that the Thunderstore version of this mod will receive less frequent updates. Thunderstore will remain supported, but wont be a priority.
 
 # ViewExtension 🔍
-This is a very simple mod that increases the camera view distance from **400m** to **1500m**. A config option to change this value is included.
+This is a very simple mod that increases the camera view distance from the vanilla 400m. A new View Distance setting is added in the pausemenu to change this value.
   
 **Before:**
 ![Screenshot_1](https://raw.githubusercontent.com/sfDesat/ViewExtension/main/Screenshots/Before.png "Before Screenshot")
@@ -12,6 +12,10 @@ This is a very simple mod that increases the camera view distance from **400m** 
 
 ### Manual Installation:
 Make sure to have BepInEx installed in your Lethal Company folder. Just drag and drop all the files into your mods folder inside Lethal Company.
+
+### Configuration options:
+- **[FarClipPlane]** Change the view distance through the config.
+- **[MenuOption]** Enables the View Distance setting in the pausemenu.
   
 ***
 _If you want to give feedback or have questions, here are some options:  
