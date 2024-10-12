@@ -26,7 +26,7 @@ public class CameraFarClipPlanePatch
 {
     [HarmonyPatch("SwitchCamera")]
     [HarmonyPrefix]
-    static void forceAllowBuildPatch(Camera newCamera)
+    static void SwitchCameraFarClipPlanePatch(Camera newCamera)
     {
         ViewExtension.logger.LogDebug($"SwitchCamera Called with '{newCamera.name}', updating farClipPlane to {ViewExtensionConfig.FarClipPlane.Value}");
         newCamera.farClipPlane = ViewExtensionConfig.FarClipPlane.Value;
