@@ -9,6 +9,7 @@ public class ViewExtensionSettings : MonoBehaviour
     public TextMeshProUGUI sliderText;
     private Slider slider;
     private Camera gameplayCamera;
+    private Camera spectateCamera;
 
     void Awake()
     {
@@ -36,6 +37,11 @@ public class ViewExtensionSettings : MonoBehaviour
                 else Debug.LogError("[ViewExtension] PlayerControllerB script not found on Player object.");
             }
             else Debug.LogError("[ViewExtension] Player object not found.");
+            
+            if (StartOfRound.Instance) {
+                spectateCamera = StartOfRound.Instance.spectateCamera;
+            }
+            else Debug.LogError("[ViewExtension] StartOfRound object not found.");
         }
     }
 
@@ -49,6 +55,7 @@ public class ViewExtensionSettings : MonoBehaviour
         if (ViewExtensionConfig.DebugLogging.Value) Debug.Log(sliderText.text);
 
         if (gameplayCamera != null) gameplayCamera.farClipPlane = newDistanceValue;
+        if (spectateCamera != null) spectateCamera.farClipPlane = newDistanceValue;
 
         ViewExtensionConfig.Save();
     }
