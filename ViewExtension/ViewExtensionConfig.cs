@@ -1,5 +1,4 @@
-using UnityEngine;
-using BepInEx.Configuration;
+﻿using BepInEx.Configuration;
 
 public static class ViewExtensionConfig
 {
@@ -13,8 +12,6 @@ public static class ViewExtensionConfig
 
         if (float.IsNaN(FarClipPlane.Value) || FarClipPlane.Value <= 0 || FarClipPlane.Value >= 100000)
         {
-            // If so, log a warning and set a default value
-            Debug.LogWarning("ViewExtension: Invalid value for FarClipPlane in the config file. Using default value of 1500.");
             FarClipPlane.Value = 1500f; // Set a default value
         }
     }
